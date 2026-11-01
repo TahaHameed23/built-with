@@ -5,7 +5,7 @@ Add a customizable "Built with / by" badge to a website. Use the Svelte componen
 ## Install
 
 ```sh
-npm install built-with
+npm install @tahahameed23/built-with
 ```
 
 ## Badge examples
@@ -28,7 +28,7 @@ The label, optional “with”, font, and corner position are customizable:
 
 ```svelte
 <script>
-    import { Badge } from "built-with";
+    import { Badge } from "@tahahameed23/built-with";
 </script>
 
 <Badge
@@ -47,7 +47,7 @@ The label, optional “with”, font, and corner position are customizable:
 ### Vanilla JavaScript
 
 ```js
-import { mountBadge } from "built-with/vanilla";
+import { mountBadge } from "@tahahameed23/built-with/vanilla";
 
 const badge = mountBadge({
     builtWith: "Svelte",
@@ -73,7 +73,7 @@ Add the script near the end of `<body>`. It also works in `<head>` and waits for
 
 ```html
 <script
-    src="https://cdn.jsdelivr.net/npm/built-with@0.0.1/dist/cdn/badge.js"
+    src="https://cdn.jsdelivr.net/npm/@tahahameed23/built-with@0.0.1/dist/cdn/badge.js"
     data-builtwith="Svelte"
     data-by="Your name"
     data-text="Built"
