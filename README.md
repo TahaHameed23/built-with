@@ -132,6 +132,10 @@ Custom `background` and `color` override the selected theme. For the CDN, use th
 
 Set `data-show-with="false"` to hide “with”; omit the attribute or set it to `"true"` to include it. `data-z-index` must contain a finite number, for example `data-z-index="10000"`.
 
+## Host the badge builder
+
+The SvelteKit app includes a visual badge builder at `/` and a short setup guide at `/docs`. Run it locally with `npm run dev`, then deploy the app to a SvelteKit-compatible host to let visitors choose badge options, preview them, and copy React, Svelte, or CDN snippets.
+
 ## Build and publish
 
 ```sh
