@@ -103,6 +103,23 @@ ${closeScriptTag}
             >Customize your badge <span aria-hidden="true">→</span></a
         >
     </main>
+
+    <footer>
+        <div class="footer-copy">
+            <span>Made for the makers behind the web.</span>
+        </div>
+        <a
+            class="footer-badge"
+            href="https://github.com/TahaHameed23/built-with"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Built with Built With Badge by Taha"
+        >
+            <span>Built with</span>
+            <strong>Built With Badge</strong>
+            <span>by <strong>Taha</strong></span>
+        </a>
+    </footer>
 </div>
 
 <style>
@@ -126,6 +143,12 @@ ${closeScriptTag}
     .docs-shell {
         min-height: 100vh;
         padding: 0 40px 64px;
+    }
+
+    main,
+    footer {
+        width: min(1120px, 100%);
+        margin: 0 auto;
     }
 
     main {
@@ -288,6 +311,59 @@ ${closeScriptTag}
         transition: transform 160ms ease;
     }
 
+    footer {
+        display: flex;
+        min-height: 112px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        border-top: 1px solid #e8e9e7;
+        color: #858b80;
+        font-size: 10px;
+    }
+
+    .footer-copy {
+        display: grid;
+        gap: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        text-decoration-style: wavy;
+        text-decoration-color: rgb(150 200 76);
+    }
+
+    .footer-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 11px;
+        border: 1px solid rgb(255 255 255 / 12%);
+        border-radius: 8px;
+        background: #222820;
+        box-shadow: 0 3px 10px rgb(25 32 19 / 12%);
+        color: #f7f8f4;
+        font-size: 11px;
+        text-decoration: none;
+        transition:
+            transform 160ms ease,
+            box-shadow 160ms ease;
+    }
+
+    .footer-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgb(25 32 19 / 16%);
+        color: #f7f8f4;
+    }
+
+    .footer-badge:active {
+        transform: translateY(0);
+    }
+
+    .footer-badge strong {
+        color: #c9f27e;
+    }
+
     @media (max-width: 800px) {
         .docs-shell {
             padding-right: 24px;
@@ -307,6 +383,15 @@ ${closeScriptTag}
 
         .topbar {
             height: 64px;
+        }
+
+        footer {
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+            min-height: 128px;
+            padding: 20px 0;
         }
 
         nav {
