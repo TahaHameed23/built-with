@@ -1,0 +1,72 @@
+{
+    "name": "built-with",
+    "version": "0.0.1",
+    "description": "Add a customizable Built with / by badge to your website.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TahaHameed23/Built-with.git"
+    },
+    "homepage": "https://github.com/TahaHameed23/Built-with#readme",
+    "bugs": {
+        "url": "https://github.com/TahaHameed23/Built-with/issues"
+    },
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build && npm run prepack",
+        "build:cdn": "vite build --config vite.config.embed.js",
+        "preview": "vite preview",
+        "prepare": "svelte-kit sync",
+        "prepack": "svelte-kit sync && svelte-package && npm run build:cdn && publint",
+        "release:check": "npm pack --dry-run",
+        "release:publish": "npm publish"
+    },
+    "files": [
+        "dist"
+    ],
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "svelte": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "svelte": "./dist/index.js"
+        },
+        "./vanilla": {
+            "types": "./dist/mount.d.ts",
+            "import": "./dist/mount.js"
+        }
+    },
+    "unpkg": "./dist/cdn/badge.js",
+    "jsdelivr": "./dist/cdn/badge.js",
+    "peerDependencies": {
+        "svelte": "^5.0.0"
+    },
+    "peerDependenciesMeta": {
+        "svelte": {
+            "optional": true
+        }
+    },
+    "devDependencies": {
+        "@sveltejs/adapter-auto": "^6.0.0",
+        "@sveltejs/kit": "^2.22.0",
+        "@sveltejs/package": "^2.0.0",
+        "@sveltejs/vite-plugin-svelte": "^6.0.0",
+        "publint": "^0.3.2",
+        "svelte": "^5.0.0",
+        "typescript": "^5.3.2",
+        "vite": "^7.0.4"
+    },
+    "keywords": [
+        "built-with",
+        "badge",
+        "widget",
+        "attribution",
+        "embed",
+        "cdn",
+        "svelte"
+    ]
+}
