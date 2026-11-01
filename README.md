@@ -67,13 +67,13 @@ badge.destroy();
 
 `mountBadge` also works before `document.body` exists. It mounts when the DOM is ready. Calling `destroy()` before then cancels the pending mount.
 
-### CDN script
+### CDN script (no npm install required)
 
-Add the script near the end of `<body>`. It also works in `<head>` and waits for the page body. No framework or separate stylesheet is required.
+Copy this script into your page to add the badge. No npm install, framework, or separate stylesheet is required.
 
 ```html
 <script
-    src="https://cdn.jsdelivr.net/npm/@tahahameed23/built-with@0.0.1/dist/cdn/badge.js"
+    src="https://unpkg.com/@tahahameed23/built-with@0.0.1/dist/cdn/badge.js"
     data-builtwith="Svelte"
     data-by="Your name"
     data-text="Built"
@@ -86,7 +86,16 @@ Add the script near the end of `<body>`. It also works in `<head>` and waits for
 ></script>
 ```
 
-Pin a published version in production. Update the version in the URL when you want to upgrade.
+The script can go near the end of `<body>` or in `<head>`; it waits for the page body. This CDN URL becomes available after version `0.0.1` is published to npm. A GitHub release does not publish the npm package. Pin a published version in production and update the version in the URL when you want to upgrade.
+
+```html
+<script
+    src="https://unpkg.com/@tahahameed23/built-with@0.0.1/dist/cdn/badge.js"
+    data-builtwith="Svelte"
+    data-by="Your name"
+    data-theme="purple"
+></script>
+```
 
 ## Options reference
 
