@@ -19,7 +19,7 @@
         "prepare": "svelte-kit sync",
         "prepack": "svelte-kit sync && svelte-package && npm run build:cdn && publint",
         "release:check": "npm pack --dry-run",
-        "release:publish": "npm publish --access public"
+        "release:publish": "npm publish --access=public"
     },
     "files": [
         "dist",
