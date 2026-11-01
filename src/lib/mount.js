@@ -95,7 +95,9 @@ export function mountBadge(options = {}) {
         element.className = `built-with-badge built-with-badge--${badgeOptions.position}`;
         element.setAttribute(
             "aria-label",
-            `${badgeOptions.text} ${badgeOptions.builtWith} by ${badgeOptions.by}`,
+            [badgeOptions.text, badgeOptions.builtWith, `by ${badgeOptions.by}`]
+                .filter(Boolean)
+                .join(" "),
         );
         if (badgeOptions.href) element.setAttribute("href", badgeOptions.href);
         element.style.setProperty("--built-with-bg", badgeOptions.background);
@@ -107,15 +109,19 @@ export function mountBadge(options = {}) {
 
         const label = document.createElement("span");
         label.textContent = badgeOptions.text;
-        const builtWith = document.createElement("strong");
-        builtWith.textContent = badgeOptions.builtWith;
         const by = document.createElement("span");
         by.append("by ");
         const author = document.createElement("strong");
         author.textContent = badgeOptions.by;
         by.append(author);
 
-        element.append(label, builtWith, by);
+        element.append(label);
+        if (badgeOptions.builtWith) {
+            const builtWith = document.createElement("strong");
+            builtWith.textContent = badgeOptions.builtWith;
+            element.append(builtWith);
+        }
+        element.append(by);
         document.body.append(element);
     };
 

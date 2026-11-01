@@ -25,6 +25,9 @@
     );
     let badgeHref = $derived(normalizeHref(href));
     let badgeText = $derived(formatBadgeText(text, showWith));
+    let badgeLabel = $derived(
+        [badgeText, builtWith, `by ${by}`].filter(Boolean).join(" "),
+    );
     let themeColors = $derived(resolveBadgeTheme(theme));
     let badgeBackground = $derived(background ?? themeColors.background);
     let badgeColor = $derived(color ?? themeColors.color);
@@ -37,21 +40,21 @@
     <a
         class="badge {badgePosition}"
         href={badgeHref}
-        aria-label="{badgeText} {builtWith} by {by}"
+        aria-label={badgeLabel}
         style={badgeStyle}
     >
         <span>{badgeText}</span>
-        <strong>{builtWith}</strong>
+        {#if builtWith}<strong>{builtWith}</strong>{/if}
         <span>by <strong>{by}</strong></span>
     </a>
 {:else}
     <div
         class="badge {badgePosition}"
-        aria-label="{badgeText} {builtWith} by {by}"
+        aria-label={badgeLabel}
         style={badgeStyle}
     >
         <span>{badgeText}</span>
-        <strong>{builtWith}</strong>
+        {#if builtWith}<strong>{builtWith}</strong>{/if}
         <span>by <strong>{by}</strong></span>
     </div>
 {/if}
