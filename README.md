@@ -129,7 +129,3 @@ Set `data-show-with="false"` to hide “with”; omit the attribute or set it to
 npm run release:check
 npm run release:publish
 ```
-
-`npm run release:check` runs `npm pack --dry-run`, builds the package and CDN file, and runs `publint`. Review the listed tarball contents before publishing. `npm run release:publish` publishes the package; npm runs the package preparation and validation hooks automatically.
-
-Before the first release, confirm the `built-with` name is available on npm and update the package version as needed. The package is MIT-licensed; see [LICENSE](./LICENSE).
