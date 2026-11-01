@@ -5,6 +5,7 @@ export type BadgeOptions = {
     builtWith?: string;
     by?: string;
     text?: string;
+    showWith?: boolean;
     background?: string;
     color?: string;
     theme?: BadgeTheme;

@@ -18,16 +18,17 @@ npm install built-with
 <Badge
     builtWith="Svelte"
     by="Your name"
-    text="Built with"
+    text="Built"
+    showWith={true}
     position="bottom-right"
-    theme="black"
+    theme="purple"
     fontFamily="Georgia, serif"
     fontSize="13px"
     href="https://example.com"
 />
 ```
 
-`href` is optional and accepts HTTP(S) URLs or relative URLs. The badge supports `top-left`, `top-right`, `bottom-left`, and `bottom-right` positions. Choose a built-in `theme` (`dark`, `light`, `blue`, `purple`, `green`, `orange`, `pink`, or `slate`) instead of entering color codes. You can also use any CSS color name such as `"tomato"`, or a CSS variable such as `"var(--brand-color)"`. Explicit `background` and `color` values override the selected theme.
+`showWith` controls whether `" with"` is added to the `text` label (default: `true`). If the label already ends in `"with"`, it is not duplicated. Set `showWith={false}` to omit it. `href` is optional and accepts HTTP(S) URLs or relative URLs. The badge supports `top-left`, `top-right`, `bottom-left`, and `bottom-right` positions. Choose a built-in `theme` (`dark`, `light`, `blue`, `purple`, `green`, `orange`, `pink`, or `slate`) instead of entering color codes. You can also use any CSS color name such as `"tomato"`, or a CSS variable such as `"var(--brand-color)"`. Explicit `background` and `color` values override the selected theme.
 
 Customize typography with `fontFamily`, `fontSize`, and `fontWeight`. For example, `fontFamily: "Georgia, serif"` or `fontFamily: "inherit"` works without adding a font dependency.
 
@@ -39,7 +40,8 @@ import { mountBadge } from "built-with/vanilla";
 const badge = mountBadge({
     builtWith: "Svelte",
     by: "Your name",
-    text: "Built with",
+    text: "Built",
+    showWith: false,
     position: "bottom-right",
     theme: "blue",
     fontFamily: "Arial, sans-serif",
@@ -62,7 +64,8 @@ Add this script near the end of `<body>`. It adds the badge automatically; no fr
     src="https://cdn.jsdelivr.net/npm/built-with@0.0.1/dist/cdn/badge.js"
     data-builtwith="Svelte"
     data-by="Your name"
-    data-text="Built with"
+    data-text="Built"
+    data-show-with="false"
     data-position="bottom-right"
     data-theme="green"
     data-font-family="Arial, sans-serif"
@@ -78,6 +81,7 @@ The script also works in `<head>`. Use the latest published version in the URL, 
 | `builtWith`  | `data-builtwith`   | `⚡`                    |
 | `by`         | `data-by`          | `someone`               |
 | `text`       | `data-text`        | `Built with`            |
+| `showWith`   | `data-show-with`   | `true`                  |
 | `position`   | `data-position`    | `bottom-right`          |
 | `theme`      | `data-theme`       | `dark`                  |
 | `background` | `data-bg`          | theme default           |

@@ -15,6 +15,7 @@ mountBadge({
     fontFamily: script.getAttribute("data-font-family") ?? undefined,
     fontSize: script.getAttribute("data-font-size") ?? undefined,
     fontWeight: script.getAttribute("data-font-weight") ?? undefined,
+    showWith: script.getAttribute("data-show-with")?.toLowerCase() !== "false",
     text: script.getAttribute("data-text") ?? undefined,
     position: script.getAttribute("data-position") ?? undefined,
     href: script.getAttribute("data-href") ?? undefined,

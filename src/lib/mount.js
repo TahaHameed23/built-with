@@ -1,5 +1,6 @@
 import { normalizeHref } from "./validate-href.js";
 import { resolveBadgeTheme } from "./badge-theme.js";
+import { formatBadgeText } from "./format-badge-text.js";
 
 const positions = new Set([
     "top-left",
@@ -51,11 +52,16 @@ function normalizeOptions(options) {
 
     const requestedPosition = options.position ?? "bottom-right";
     const theme = resolveBadgeTheme(options.theme);
+    const showWith = options.showWith ?? true;
+
+    if (typeof showWith !== "boolean") {
+        throw new TypeError("Badge showWith option must be a boolean.");
+    }
 
     return {
         builtWith: String(options.builtWith ?? "⚡"),
         by: String(options.by ?? "someone"),
-        text: String(options.text ?? "Built with"),
+        text: formatBadgeText(options.text ?? "Built with", showWith),
         background: String(options.background ?? theme.background),
         color: String(options.color ?? theme.color),
         position: positions.has(requestedPosition) ? requestedPosition : "bottom-right",

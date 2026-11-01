@@ -1,5 +1,6 @@
 <script>
     import { resolveBadgeTheme } from "../badge-theme.js";
+    import { formatBadgeText } from "../format-badge-text.js";
     import { normalizeHref } from "../validate-href.js";
 
     const {
@@ -12,6 +13,7 @@
         fontSize = "12px",
         fontWeight = 500,
         text = "Built with",
+        showWith = true,
         position = "bottom-right",
         href = "",
         zIndex = 9999,
@@ -20,6 +22,7 @@
     const positions = ["top-left", "top-right", "bottom-left", "bottom-right"];
     let badgePosition = $derived(positions.includes(position) ? position : "bottom-right");
     let badgeHref = $derived(normalizeHref(href));
+    let badgeText = $derived(formatBadgeText(text, showWith));
     let themeColors = $derived(resolveBadgeTheme(theme));
     let badgeBackground = $derived(background ?? themeColors.background);
     let badgeColor = $derived(color ?? themeColors.color);
@@ -32,20 +35,20 @@
     <a
         class="badge {badgePosition}"
         href={badgeHref}
-        aria-label="{text} {builtWith} by {by}"
+        aria-label="{badgeText} {builtWith} by {by}"
         style={badgeStyle}
     >
-        <span>{text}</span>
+        <span>{badgeText}</span>
         <strong>{builtWith}</strong>
         <span>by <strong>{by}</strong></span>
     </a>
 {:else}
     <div
         class="badge {badgePosition}"
-        aria-label="{text} {builtWith} by {by}"
+        aria-label="{badgeText} {builtWith} by {by}"
         style={badgeStyle}
     >
-        <span>{text}</span>
+        <span>{badgeText}</span>
         <strong>{builtWith}</strong>
         <span>by <strong>{by}</strong></span>
     </div>
