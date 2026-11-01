@@ -22,7 +22,8 @@
         "release:publish": "npm publish"
     },
     "files": [
-        "dist"
+        "dist",
+        "docs/images"
     ],
     "sideEffects": [
         "**/*.css"

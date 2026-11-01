@@ -20,7 +20,9 @@
     } = $props();
 
     const positions = ["top-left", "top-right", "bottom-left", "bottom-right"];
-    let badgePosition = $derived(positions.includes(position) ? position : "bottom-right");
+    let badgePosition = $derived(
+        positions.includes(position) ? position : "bottom-right",
+    );
     let badgeHref = $derived(normalizeHref(href));
     let badgeText = $derived(formatBadgeText(text, showWith));
     let themeColors = $derived(resolveBadgeTheme(theme));
@@ -60,7 +62,8 @@
         z-index: var(--badge-z-index, 9999);
         background: var(--badge-bg, #333);
         color: var(--badge-color, #fff);
-        font: var(--badge-font-weight, 500) var(--badge-font-size, 12px)/1.4 var(--badge-font-family, system-ui, sans-serif);
+        font: var(--badge-font-weight, 500) var(--badge-font-size, 12px) / 1.4
+            var(--badge-font-family, system-ui, sans-serif);
         padding: 6px 10px;
         border-radius: 6px;
         display: flex;
@@ -75,8 +78,20 @@
         outline-offset: 3px;
     }
 
-    .top-left { top: 10px; left: 10px; }
-    .top-right { top: 10px; right: 10px; }
-    .bottom-left { bottom: 10px; left: 10px; }
-    .bottom-right { right: 10px; bottom: 10px; }
+    .top-left {
+        top: 10px;
+        left: 10px;
+    }
+    .top-right {
+        top: 10px;
+        right: 10px;
+    }
+    .bottom-left {
+        bottom: 10px;
+        left: 10px;
+    }
+    .bottom-right {
+        right: 10px;
+        bottom: 10px;
+    }
 </style>

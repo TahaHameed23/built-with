@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title description">
+  <title id="title">Built With badge theme examples</title>
+  <desc id="description">Eight examples of the Built With badge, each using a different built-in color theme.</desc>
+  <rect width="900" height="420" rx="24" fill="#f4f6fb"/>
+  <text x="40" y="58" fill="#182033" font-family="system-ui, sans-serif" font-size="24" font-weight="700">Pick a theme</text>
+  <text x="40" y="84" fill="#667085" font-family="system-ui, sans-serif" font-size="14">No hex codes needed. Set theme to one of these names.</text>
+
+  <g font-family="system-ui, sans-serif" font-size="12">
+    <text x="58" y="143" fill="#667085" font-size="13">dark</text>
+    <rect x="115" y="116" width="285" height="48" rx="12" fill="#333"/>
+    <text x="137" y="145" fill="#fff">Built with <tspan font-weight="700">Svelte</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="488" y="143" fill="#667085" font-size="13">light</text>
+    <rect x="545" y="116" width="300" height="48" rx="12" fill="#fff" stroke="#d0d5dd"/>
+    <text x="567" y="145" fill="#222">Built with <tspan font-weight="700">Svelte</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="58" y="223" fill="#667085" font-size="13">blue</text>
+    <rect x="115" y="196" width="285" height="48" rx="12" fill="royalblue"/>
+    <text x="137" y="225" fill="#fff">Built with <tspan font-weight="700">Svelte</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="488" y="223" fill="#667085" font-size="13">purple</text>
+    <rect x="545" y="196" width="300" height="48" rx="12" fill="rebeccapurple"/>
+    <text x="567" y="225" fill="#fff">Built with <tspan font-weight="700">Svelte</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="58" y="303" fill="#667085" font-size="13">green</text>
+    <rect x="115" y="276" width="285" height="48" rx="12" fill="seagreen"/>
+    <text x="137" y="305" fill="#fff">Built with <tspan font-weight="700">Svelte</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="488" y="303" fill="#667085" font-size="13">orange</text>
+    <rect x="545" y="276" width="300" height="48" rx="12" fill="darkorange"/>
+    <text x="567" y="305" fill="#fff">Built with <tspan font-weight="700">Svelte</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="58" y="383" fill="#667085" font-size="13">pink</text>
+    <rect x="115" y="356" width="285" height="48" rx="12" fill="deeppink"/>
+    <text x="137" y="385" fill="#fff">Built with <tspan font-weight="700">Svelte</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="488" y="383" fill="#667085" font-size="13">slate</text>
+    <rect x="545" y="356" width="300" height="48" rx="12" fill="slategray"/>
+    <text x="567" y="385" fill="#fff">Built with <tspan font-weight="700">Svelte</tspan> by <tspan font-weight="700">Alex</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-labelledby="title description">
+  <title id="title">Built With badge customization examples</title>
+  <desc id="description">Examples showing the optional with label, custom font and color, and all four badge corner positions.</desc>
+  <rect width="900" height="500" rx="24" fill="#f4f6fb"/>
+  <text x="40" y="58" fill="#182033" font-family="system-ui, sans-serif" font-size="24" font-weight="700">Make the badge yours</text>
+
+  <g font-family="system-ui, sans-serif">
+    <text x="48" y="105" fill="#667085" font-size="13">showWith: true (default)</text>
+    <rect x="48" y="118" width="330" height="48" rx="12" fill="#333"/>
+    <text x="68" y="148" fill="#fff" font-size="13">Built with <tspan font-weight="700">Astro</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="48" y="199" fill="#667085" font-size="13">showWith: false</text>
+    <rect x="48" y="212" width="330" height="48" rx="12" fill="#4169e1"/>
+    <text x="68" y="242" fill="#fff" font-size="13">Built <tspan font-weight="700">Astro</tspan> by <tspan font-weight="700">Alex</tspan></text>
+
+    <text x="48" y="293" fill="#667085" font-size="13">Custom CSS color name + font stack</text>
+    <rect x="48" y="306" width="330" height="52" rx="12" fill="tomato"/>
+    <text x="68" y="338" fill="#fff" font-family="Georgia, serif" font-size="15">Made with <tspan font-weight="700">Svelte</tspan></text>
+
+    <text x="480" y="105" fill="#667085" font-size="13">position: choose any viewport corner</text>
+    <rect x="480" y="118" width="370" height="240" rx="16" fill="#fff" stroke="#d0d5dd"/>
+    <rect x="496" y="134" width="148" height="38" rx="9" fill="#333"/>
+    <text x="511" y="158" fill="#fff" font-size="11">Built with <tspan font-weight="700">Vite</tspan></text>
+    <text x="500" y="191" fill="#667085" font-size="10">top-left</text>
+
+    <rect x="686" y="134" width="148" height="38" rx="9" fill="#663399"/>
+    <text x="701" y="158" fill="#fff" font-size="11">Built with <tspan font-weight="700">Vite</tspan></text>
+    <text x="744" y="191" fill="#667085" font-size="10">top-right</text>
+
+    <rect x="496" y="304" width="148" height="38" rx="9" fill="#2e8b57"/>
+    <text x="511" y="328" fill="#fff" font-size="11">Built with <tspan font-weight="700">Vite</tspan></text>
+    <text x="500" y="354" fill="#667085" font-size="10">bottom-left</text>
+
+    <rect x="686" y="304" width="148" height="38" rx="9" fill="#333"/>
+    <text x="701" y="328" fill="#fff" font-size="11">Built with <tspan font-weight="700">Vite</tspan></text>
+    <text x="758" y="354" fill="#667085" font-size="10">bottom-right</text>
+
+    <text x="48" y="423" fill="#667085" font-size="13">All examples are live text rendered in the badge’s chosen font and colors.</text>
+    <text x="48" y="452" fill="#667085" font-size="12">Options: text · showWith · theme/background/color · fontFamily/fontSize/fontWeight · position</text>
+  </g>
+</svg>

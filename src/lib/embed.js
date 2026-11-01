@@ -19,4 +19,7 @@ mountBadge({
     text: script.getAttribute("data-text") ?? undefined,
     position: script.getAttribute("data-position") ?? undefined,
     href: script.getAttribute("data-href") ?? undefined,
+    zIndex: script.hasAttribute("data-z-index")
+        ? Number(script.getAttribute("data-z-index"))
+        : undefined,
 });

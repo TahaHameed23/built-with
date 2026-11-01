@@ -1,12 +1,28 @@
 # Built With Badge
 
-Add a small, customizable "Built with / by" badge to a website. Use the Svelte component, the framework-free npm API, or a single CDN script.
+Add a customizable "Built with / by" badge to a website. Use the Svelte component, framework-free JavaScript API, or one CDN script.
 
 ## Install
 
 ```sh
 npm install built-with
 ```
+
+## Badge examples
+
+### Themes
+
+Choose a preset theme without writing hex colors:
+
+![Built With badge theme examples](docs/images/badge-themes.svg)
+
+### Text, typography, and position
+
+The label, optional “with”, font, and corner position are customizable:
+
+![Built With badge text, typography, and position examples](docs/images/badge-options.svg)
+
+## Usage
 
 ### Svelte
 
@@ -28,10 +44,6 @@ npm install built-with
 />
 ```
 
-`showWith` controls whether `" with"` is added to the `text` label (default: `true`). If the label already ends in `"with"`, it is not duplicated. Set `showWith={false}` to omit it. `href` is optional and accepts HTTP(S) URLs or relative URLs. The badge supports `top-left`, `top-right`, `bottom-left`, and `bottom-right` positions. Choose a built-in `theme` (`dark`, `light`, `blue`, `purple`, `green`, `orange`, `pink`, or `slate`) instead of entering color codes. You can also use any CSS color name such as `"tomato"`, or a CSS variable such as `"var(--brand-color)"`. Explicit `background` and `color` values override the selected theme.
-
-Customize typography with `fontFamily`, `fontSize`, and `fontWeight`. For example, `fontFamily: "Georgia, serif"` or `fontFamily: "inherit"` works without adding a font dependency.
-
 ### Vanilla JavaScript
 
 ```js
@@ -49,15 +61,15 @@ const badge = mountBadge({
     href: "https://example.com",
 });
 
-// Remove it when it is no longer needed.
+// Remove the badge when it is no longer needed.
 badge.destroy();
 ```
 
-`mountBadge` can also be used before `document.body` exists. It mounts when the DOM is ready. Calling `destroy()` before then cancels the pending mount.
+`mountBadge` also works before `document.body` exists. It mounts when the DOM is ready. Calling `destroy()` before then cancels the pending mount.
 
 ### CDN script
 
-Add this script near the end of `<body>`. It adds the badge automatically; no framework or stylesheet is required.
+Add the script near the end of `<body>`. It also works in `<head>` and waits for the page body. No framework or separate stylesheet is required.
 
 ```html
 <script
@@ -74,33 +86,50 @@ Add this script near the end of `<body>`. It adds the badge automatically; no fr
 ></script>
 ```
 
-The script also works in `<head>`. Use the latest published version in the URL, and prefer pinning a specific version in production.
+Pin a published version in production. Update the version in the URL when you want to upgrade.
 
-| Option       | CDN attribute      | Default                 |
-| ------------ | ------------------ | ----------------------- |
-| `builtWith`  | `data-builtwith`   | `⚡`                    |
-| `by`         | `data-by`          | `someone`               |
-| `text`       | `data-text`        | `Built with`            |
-| `showWith`   | `data-show-with`   | `true`                  |
-| `position`   | `data-position`    | `bottom-right`          |
-| `theme`      | `data-theme`       | `dark`                  |
-| `background` | `data-bg`          | theme default           |
-| `color`      | `data-color`       | theme default           |
-| `fontFamily` | `data-font-family` | `system-ui, sans-serif` |
-| `fontSize`   | `data-font-size`   | `12px`                  |
-| `fontWeight` | `data-font-weight` | `500`                   |
-| `href`       | `data-href`        | none                    |
+## Options reference
 
-Only HTTP(S) and relative links are accepted for `href`. Unsupported positions fall back to `bottom-right`; unsupported themes use `dark`. CSS named colors and variables can also be passed through `background` and `color` when you want a custom color without hexadecimal notation.
+The Svelte component and `mountBadge(options)` support all options in the table. The CDN script accepts the matching `data-*` attribute shown in the last column.
+
+| Option       | Type                                                                                     | Default                   | Description                                                                                                                                                                 | CDN attribute      |
+| ------------ | ---------------------------------------------------------------------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `builtWith`  | `string`                                                                                 | `"⚡"`                    | Name, technology, or text displayed after the label.                                                                                                                        | `data-builtwith`   |
+| `by`         | `string`                                                                                 | `"someone"`               | Name or attribution displayed after “by”.                                                                                                                                   | `data-by`          |
+| `text`       | `string`                                                                                 | `"Built with"`            | Label shown before `builtWith`. The `showWith` setting adds or removes the final “with”.                                                                                    | `data-text`        |
+| `showWith`   | `boolean`                                                                                | `true`                    | Add “with” to the end of `text`. If `text` already ends in “with”, it is not duplicated. Set `false` for labels like “Built Svelte”.                                        | `data-show-with`   |
+| `position`   | `"top-left"`, `"top-right"`, `"bottom-left"`, or `"bottom-right"`                        | `"bottom-right"`          | Fixed position in the viewport, with a 10px edge offset. Unsupported values fall back to `bottom-right`.                                                                    | `data-position`    |
+| `theme`      | `"dark"`, `"light"`, `"blue"`, `"purple"`, `"green"`, `"orange"`, `"pink"`, or `"slate"` | `"dark"`                  | Preset background and text colors. Unsupported themes fall back to `dark`.                                                                                                  | `data-theme`       |
+| `background` | CSS color string                                                                         | Theme background          | Custom badge background. Overrides the theme background. Accepts CSS names such as `"tomato"` and CSS variables such as `"var(--brand-color)"`; hex, RGB, and HSL work too. | `data-bg`          |
+| `color`      | CSS color string                                                                         | Theme text color          | Custom text color. Overrides the theme text color. Accepts CSS names and variables as well as hex, RGB, and HSL.                                                            | `data-color`       |
+| `fontFamily` | CSS font-family string                                                                   | `"system-ui, sans-serif"` | Font stack for the badge. Use an installed/system font stack or `"inherit"`; this option does not download fonts.                                                           | `data-font-family` |
+| `fontSize`   | CSS length string                                                                        | `"12px"`                  | Badge font size, for example `"14px"` or `"0.875rem"`.                                                                                                                      | `data-font-size`   |
+| `fontWeight` | CSS font-weight string or number                                                         | `500`                     | Font weight, for example `400`, `600`, or `"bold"`.                                                                                                                         | `data-font-weight` |
+| `href`       | HTTP(S) or relative URL string                                                           | None                      | Optional link applied to the whole badge. Other URL protocols are rejected.                                                                                                 | `data-href`        |
+| `zIndex`     | finite number                                                                            | `9999`                    | CSS stacking order for the fixed badge.                                                                                                                                     | `data-z-index`     |
+
+### Choosing colors without hex
+
+The easiest option is to set a preset `theme`, such as `theme="purple"`. For custom colors, use familiar CSS color names or your own CSS custom properties:
+
+```svelte
+<Badge theme="dark" background="tomato" color="white" />
+<Badge background="var(--brand-color)" color="var(--brand-on-color)" />
+```
+
+Custom `background` and `color` override the selected theme. For the CDN, use the same CSS values in `data-bg` and `data-color`.
+
+### CDN boolean and numeric attributes
+
+Set `data-show-with="false"` to hide “with”; omit the attribute or set it to `"true"` to include it. `data-z-index` must contain a finite number, for example `data-z-index="10000"`.
 
 ## Build and publish
 
 ```sh
 npm run release:check
-npm login
 npm run release:publish
 ```
 
-`npm run release:check` runs `npm pack --dry-run`, which builds the package and lets you review the exact files before publishing. `npm run release:publish` publishes the package; npm runs the package preparation and validation hooks automatically.
+`npm run release:check` runs `npm pack --dry-run`, builds the package and CDN file, and runs `publint`. Review the listed tarball contents before publishing. `npm run release:publish` publishes the package; npm runs the package preparation and validation hooks automatically.
 
 Before the first release, confirm the `built-with` name is available on npm and update the package version as needed. The package is MIT-licensed; see [LICENSE](./LICENSE).
